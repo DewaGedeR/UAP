@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">UAP</string>
+    <string name="greet">Selamat Datang</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="confirm">Konfirmasi Password</string>
+    <string name="greenfresh">Green Fresh</string>
+    <string name="tambahList">Tambah List</string>
+    <string name="hapus">Hapus</string>
+    <string name="detail">Detail</string>
+    <string name="update">Update</string>
+    <string name="addNama">Masukkan nama tanaman</string>
+    <string name="addHarga">Masukkan harga</string>
+    <string name="addDeskripsi">Masukkan deskripsi</string>
+    <string name="namaTanaman">Nama Tanaman: </string>
+    <string name="harga">Harga:</string>
+    <string name="deskripsi">Deskripsi:</string>
+    <string name="add">Tambah</string>
+    <string name="save">Simpan</string>
+</resources>

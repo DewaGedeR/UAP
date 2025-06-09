@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#75CF62"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:text="@string/greenfresh"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+    <ImageView
+        android:id="@+id/image_card"
+        android:layout_width="229dp"
+        android:layout_height="337dp"
+        android:layout_gravity="center"
+        android:src="@drawable/plant_card"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="330dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="Daun Hijau"
+        android:background="@drawable/bg_card"
+        android:padding="18dp"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="330dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="Rp xxx xxx"
+        android:background="@drawable/bg_card"
+        android:padding="18dp"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_deskripsi"
+        android:layout_width="330dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="Lorem Ipsum"
+        android:background="@drawable/bg_card"
+        android:padding="18dp"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#75CF62"
+        android:text="@string/update"
+        android:textColor="@color/white" />
+</LinearLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "169571489803",
+    "project_id": "tugas-uap",
+    "storage_bucket": "tugas-uap.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169571489803:android:4acb3c775aed4f657b8f0e",
+        "android_client_info": {
+          "package_name": "com.example.uap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQXpiSD5xGVeGIml3PYYfpra13-lacxQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

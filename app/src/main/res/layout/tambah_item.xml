@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#75CF62"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:text="@string/greenfresh"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+    <ImageView
+        android:id="@+id/image_card"
+        android:layout_width="179dp"
+        android:layout_height="260dp"
+        android:layout_gravity="center"
+        android:src="@drawable/plant_card" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="51dp"
+        android:text="@string/namaTanaman"
+        android:textSize="19sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/addNama"
+        android:background="@drawable/edit_text_border"
+        android:layout_gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="6dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="51dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/harga"
+        android:textSize="19sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/et_price"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/addHarga"
+        android:background="@drawable/edit_text_border"
+        android:layout_gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="6dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="51dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/deskripsi"
+        android:textSize="19sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/et_deskripsi"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/addDeskripsi"
+        android:background="@drawable/edit_text_border"
+        android:layout_gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="6dp"/>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="14dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#75CF62"
+        android:text="@string/add"
+        android:textColor="@color/white"/>
+
+</LinearLayout>
