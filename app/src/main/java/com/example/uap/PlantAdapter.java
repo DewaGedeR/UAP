@@ -47,7 +47,7 @@ public class PlantAdapter extends RecyclerView.Adapter<PlantAdapter.ViewHolder> 
 
         holder.btnDetail.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailActivity.class);
-            intent.putExtra("plant_name", plant);
+            intent.putExtra("plant_name", plant.getPlant_name());
             context.startActivity(intent);
         });
 
@@ -86,6 +86,7 @@ public class PlantAdapter extends RecyclerView.Adapter<PlantAdapter.ViewHolder> 
                     Toast.makeText(context, "Berhasil Dihapus", Toast.LENGTH_SHORT).show();
                     plantList.remove(position);
                     notifyItemRemoved(position);
+                    notifyItemRangeChanged(position, plantList.size());
                 }else{
                     Toast.makeText(context, "Gagal menghapus", Toast.LENGTH_SHORT).show();
                 }

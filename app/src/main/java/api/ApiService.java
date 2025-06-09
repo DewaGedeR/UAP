@@ -19,10 +19,10 @@ public interface ApiService {
     @GET("plant/all")
     Call<PlantsResponse> getAllPlants(@Query("plant_name") String plant_name);
 
-    @DELETE("plant/{name}")
-    Call<Void> deletePlant(@Path("name") String name);
+    @DELETE("plant/{plant_name}")
+    Call<Void> deletePlant(@Path("plant_name") String name);
 
-    @POST("plant/new ")
+    @POST("plant/new")
     @FormUrlEncoded
     Call<Void> addPlant(
         @Field("plant_name") String plant_name,
@@ -30,7 +30,7 @@ public interface ApiService {
         @Field("price") String price
     );
 
-    @PUT("plant/{name}")
+    @PUT("plant/{plant_name}")
     @FormUrlEncoded
     Call<Void> updatePlant(
             @Field("plant_name") String plant_name,
@@ -38,6 +38,6 @@ public interface ApiService {
             @Field("price") String price
     );
 
-    @GET("plant/{name}")
-    Call<Void> getPlantByName(@Path("name") String name);
+    @GET("plant/{plant_name}")
+    Call<Plant> getPlantByName(@Path("plant_name") String name);
 }
