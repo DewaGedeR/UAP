@@ -47,7 +47,7 @@ public class PlantAdapter extends RecyclerView.Adapter<PlantAdapter.ViewHolder> 
 
         holder.btnDetail.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailActivity.class);
-            intent.putExtra("plant", plant);
+            intent.putExtra("plant_name", plant);
             context.startActivity(intent);
         });
 

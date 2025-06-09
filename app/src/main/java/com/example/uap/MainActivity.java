@@ -3,9 +3,11 @@ package com.example.uap;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import model.PlantsResponse;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,53 +53,50 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        plantAdapter = new PlantAdapter(MainActivity.this, plantList);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(plantAdapter);
+        loadData();
     }
 
-    public void fetchPlants(){
-        Call<List<Plant>> call = apiService.getAllPlants();
-        call.enqueue(new Callback<List<Plant>>() {
+    private void loadData(){
+        Call<PlantsResponse> client = ApiClient.getApiService().getAllPlants("");
+
+        client.enqueue(new Callback<PlantsResponse>() {
             @Override
-            public void onResponse(Call<List<Plant>> call, Response<List<Plant>> response) {
+            public void onResponse(Call<PlantsResponse> call, Response<PlantsResponse> response) {
                 if (response.isSuccessful() && response.body() != null){
-                    plantList.clear();
-                    plantList.addAll(response.body());
-                    plantAdapter.notifyDataSetChanged();
-                }else{
-                    Toast.makeText(MainActivity.this, "Gagal memuat data", Toast.LENGTH_SHORT).show();
+                    plantList = response.body().getData();
+                    plantAdapter = new PlantAdapter(MainActivity.this, plantList);
+                    recyclerView.setAdapter(plantAdapter);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Plant>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<PlantsResponse> call, Throwable t) {
+                Log.e("ListTanaman", "onFailure: " + t.getMessage());
             }
         });
     }
 
-    public void deletePlant(String name, int position){
-        String encode = Uri.encode(name);
-
-        Call<Void> call = apiService.deletePlant(encode);
-        call.enqueue(new Callback<Void>() {
-            @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
-                if (response.isSuccessful()){
-                    plantList.remove(position);
-                    plantAdapter.notifyItemRemoved(position);
-                    Toast.makeText(MainActivity.this, "Berhasil dihapus", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(MainActivity.this, "Gagal menghapus data", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Void> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    public void deletePlant(String name, int position){
+//        String encode = Uri.encode(name);
+//
+//        Call<Void> call = apiService.deletePlant(encode);
+//        call.enqueue(new Callback<Void>() {
+//            @Override
+//            public void onResponse(Call<Void> call, Response<Void> response) {
+//                if (response.isSuccessful()){
+//                    plantList.remove(position);
+//                    plantAdapter.notifyItemRemoved(position);
+//                    Toast.makeText(MainActivity.this, "Berhasil dihapus", Toast.LENGTH_SHORT).show();
+//                }else{
+//                    Toast.makeText(MainActivity.this, "Gagal menghapus data", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Void> call, Throwable t) {
+//                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 }
