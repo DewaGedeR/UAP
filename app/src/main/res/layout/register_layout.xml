@@ -123,6 +123,7 @@
             android:layout_marginRight="50dp"
             android:background="@drawable/edit_text_border"
             android:hint="@string/password"
+            android:inputType="textPassword"
             android:padding="12dp" />
 
     </RelativeLayout>
