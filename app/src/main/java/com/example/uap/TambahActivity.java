@@ -38,7 +38,7 @@ public class TambahActivity extends AppCompatActivity {
             Toast.makeText(TambahActivity.this, "Tidak boleh ada kolom kosong", Toast.LENGTH_SHORT).show();
         }else{
             Call<Void> call =
-                    ApiClient.getApiService().addPlant(name, price, description);
+                    ApiClient.getApiService().addPlant(name, description, price);
             call.enqueue(new Callback<Void>() {
                 @Override
                 public void onResponse(Call<Void> call, Response<Void> response) {
